@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 25
@@ -19,6 +20,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+}
+
+//添加
+publish {
+    userOrg = 'code4a'//bintray.com用户名
+    groupId = 'com.code4a'//jcenter上的路径
+    artifactId = 'wificonnectlib'//项目名称
+    publishVersion = '0.0.2'//版本号
+    desc = 'WiFi Connect Library'
+    website = 'https://github.com/code4a/WiFiConnectLibrary'
 }
 
 dependencies {
