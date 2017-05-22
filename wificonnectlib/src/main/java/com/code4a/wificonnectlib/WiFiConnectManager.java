@@ -25,20 +25,37 @@ public final class WiFiConnectManager {
     private Context mContext;
     private WifiManager mWifiManager;
 
+    /**
+     * 构造方法
+     * @param mContext 上下文对象
+     */
     public WiFiConnectManager(Context mContext) {
         this.mContext = mContext;
         mWifiManager = (WifiManager) mContext.getSystemService(Context.WIFI_SERVICE);
         startScan();
     }
 
+    /**
+     * 开始扫描WiFi
+     */
     public void startScan() {
         mWifiManager.startScan();
     }
 
+    /**
+     * 获取扫描结果
+     * @return 扫描结果
+     */
     public List<ScanResult> getScanResults() {
         return mWifiManager.getScanResults();
     }
 
+    /**
+     * 连接到指定SSID名称的WiFi热点上
+     * @param ssid wifi名称
+     * @param password wifi密码
+     * @param wiFiConnectListener 连接监听
+     */
     public void connectWiFi(String ssid, String password, WiFiConnectListener wiFiConnectListener) {
         ScanResult scanResult = getTargetScanResultBySSID(ssid);
         if (scanResult == null && wiFiConnectListener != null) {
@@ -50,6 +67,12 @@ public final class WiFiConnectManager {
         }
     }
 
+    /**
+     * 连接到指定ScanResult的WiFi热点上
+     * @param mScanResult wifi的扫描结果
+     * @param password wifi密码
+     * @param wiFiConnectListener 连接监听
+     */
     public void connectWiFi(ScanResult mScanResult, String password, WiFiConnectListener wiFiConnectListener) {
         if (wiFiConnectListener != null) {
             wiFiConnectListener.connectStart();
@@ -83,6 +106,11 @@ public final class WiFiConnectManager {
         }
     }
 
+    /**
+     * 根据SSID名称 获取到ScanResult
+     * @param ssid wifi名称
+     * @return 扫描结果
+     */
     ScanResult getTargetScanResultBySSID(String ssid) {
         ScanResult sr = null;
         List<ScanResult> wifiList = getScanResults();
@@ -98,6 +126,9 @@ public final class WiFiConnectManager {
         return sr;
     }
 
+    /**
+     * wifi连接监听
+     */
     public interface WiFiConnectListener {
         void connectStart();
 

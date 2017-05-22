@@ -5,7 +5,7 @@
 
 1.在项目Module的`build.gradle`中添加依赖
 
-`compile 'com.code4a:wificonnectlib:0.0.2'`
+`compile 'com.code4a:wificonnectlib:1.0.3'`
 
 2.然后创建`WiFiConnectManager`对象
 

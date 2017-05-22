@@ -6,6 +6,11 @@ package com.code4a.wificonnectlib.utils;
 
 public class NetUtil {
 
+    /**
+     * ip地址转换
+     * @param address 需要转换的地址
+     * @return ip字符串
+     */
     public static String getIPAddress(int address) {
         StringBuilder sb = new StringBuilder();
         sb.append(address & 0x000000FF).append(".")

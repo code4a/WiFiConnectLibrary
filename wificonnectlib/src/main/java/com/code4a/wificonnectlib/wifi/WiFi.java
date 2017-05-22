@@ -47,10 +47,11 @@ public class WiFi {
 	
 	/**
 	 * Change the password of an existing configured network and connect to it
-	 * @param wifiMgr
-	 * @param config
-	 * @param newPassword
-	 * @return
+	 * @param ctx 上下文对象
+	 * @param wifiMgr wifi管理对象
+	 * @param config wifi配置
+	 * @param newPassword 新的密码
+	 * @return 修改结果
 	 */
 	public static boolean changePasswordAndConnect(final Context ctx, final WifiManager wifiMgr, final WifiConfiguration config, final String newPassword, final int numOpenNetworksKept) {
 		ConfigSec.setupSecurity(config, ConfigSec.getWifiConfigurationSecurity(config), newPassword);
@@ -66,10 +67,11 @@ public class WiFi {
 	
 	/**
 	 * Configure a network, and connect to it.
-	 * @param wifiMgr
-	 * @param scanResult
+	 * @param ctx 上下文对象
+	 * @param wifiMgr wifi管理对象
+	 * @param scanResult 扫描结果
 	 * @param password Password for secure network or is ignored.
-	 * @return
+	 * @return 连接结果
 	 */
 	public static boolean connectToNewNetwork(final Context ctx, final WifiManager wifiMgr, final ScanResult scanResult, final String password, final int numOpenNetworksKept) {
 		final String security = ConfigSec.getScanResultSecurity(scanResult);
@@ -109,7 +111,11 @@ public class WiFi {
 	
 	/**
 	 * Connect to a configured network.
-	 * @return
+	 * @param ctx 上下文对象
+	 * @param wifiMgr wifi管理对象
+	 * @param config wifi配置
+	 * @param reassociate reassociate
+	 * @return 连接结果
 	 */
 	public static boolean connectToConfiguredNetwork(final Context ctx, final WifiManager wifiMgr, WifiConfiguration config, boolean reassociate) {
         if(Version.SDK >= 23) {

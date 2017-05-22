@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 25
@@ -22,21 +21,15 @@ android {
     }
 }
 
+
+apply plugin: 'com.novoda.bintray-release'
+
 //添加
 publish {
     userOrg = 'code4a'//bintray.com用户名
     groupId = 'com.code4a'//jcenter上的路径
     artifactId = 'wificonnectlib'//项目名称
-    publishVersion = '0.0.2'//版本号
+    publishVersion = '1.0.3'//版本号
     desc = 'WiFi Connect Library'
     website = 'https://github.com/code4a/WiFiConnectLibrary'
-}
-
-dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    testCompile 'junit:junit:4.12'
 }
