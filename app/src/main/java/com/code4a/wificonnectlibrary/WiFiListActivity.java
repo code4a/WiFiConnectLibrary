@@ -8,7 +8,6 @@ import android.content.IntentFilter;
 import android.graphics.Color;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,7 +25,7 @@ import java.util.List;
 
 import me.drakeet.materialdialog.MaterialDialog;
 
-public class MainActivity extends ListActivity {
+public class WiFiListActivity extends ListActivity {
     private WiFiConnectManager mWifiManager;
     private List<ScanResult> mScanResults;
 
@@ -117,12 +116,12 @@ public class MainActivity extends ListActivity {
     MaterialDialog materialDialog;
 
     void showInputPasswordDialog(final ScanResult result) {
-        View configView = LayoutInflater.from(MainActivity.this)
+        View configView = LayoutInflater.from(WiFiListActivity.this)
                 .inflate(R.layout.input_password_layout, null);
         TextView message = (TextView) configView.findViewById(R.id.wifi_config_message);
         message.setText("请输入" + result.SSID + "的密码进行连接");
         final EditText password = (EditText) configView.findViewById(R.id.wifi_config_password);
-        materialDialog = new MaterialDialog(MainActivity.this)
+        materialDialog = new MaterialDialog(WiFiListActivity.this)
                 .setTitle("WiFi Connect")
                 .setContentView(configView)
                 .setCanceledOnTouchOutside(true)
@@ -159,6 +158,6 @@ public class MainActivity extends ListActivity {
     }
 
     public void showToast(String text) {
-        Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
+        Toast.makeText(WiFiListActivity.this, text, Toast.LENGTH_SHORT).show();
     }
 }
