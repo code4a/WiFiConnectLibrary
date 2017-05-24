@@ -18,15 +18,15 @@ import okhttp3.logging.HttpLoggingInterceptor;
  * Created by code4a on 2017/5/22.
  */
 
-public class OkHttpClientEngine {
+class OkHttpClientEngine {
 
     Map<String, String> httpHeaderMap;
 
-    public OkHttpClientEngine(Map<String, String> httpHeaderMap) {
+    OkHttpClientEngine(Map<String, String> httpHeaderMap) {
         this.httpHeaderMap = httpHeaderMap;
     }
 
-    public OkHttpClient defaultOkHttpClient(SSLHelper sslHelper, int timeoutSec) {
+    OkHttpClient httpsOkHttpClient(SSLHelper sslHelper, int timeoutSec) {
         OkHttpClient client = new OkHttpClient.Builder()
                 .addInterceptor(getHttpLoggingInterceptor())
                 .addInterceptor(getHttpHeaderInterceptor())
@@ -39,7 +39,7 @@ public class OkHttpClientEngine {
         return client;
     }
 
-    public OkHttpClient defaultOkHttpClient(int timeoutSec) {
+    OkHttpClient defaultOkHttpClient(int timeoutSec) {
         OkHttpClient client = new OkHttpClient.Builder()
                 .addInterceptor(getHttpLoggingInterceptor())
                 .addInterceptor(getHttpHeaderInterceptor())

@@ -10,9 +10,9 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
  * Created by code4a on 2017/5/22.
  */
 
-public class RetrofitEngine {
+class RetrofitEngine {
 
-    public static Retrofit getGsonConverterRetrofit(String baseUrl, OkHttpClient okHttpClient) {
+    static Retrofit getGsonConverterRetrofit(String baseUrl, OkHttpClient okHttpClient) {
         return new Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -21,10 +21,18 @@ public class RetrofitEngine {
                 .build();
     }
 
-    public static Retrofit getScalarsConverterRetrofit(String baseUrl, OkHttpClient okHttpClient) {
+    static Retrofit getScalarsConverterRetrofit(String baseUrl, OkHttpClient okHttpClient) {
         return new Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .addConverterFactory(ScalarsConverterFactory.create())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .client(okHttpClient)
+                .build();
+    }
+
+    static Retrofit getDefaultRetrofit(String baseUrl, OkHttpClient okHttpClient) {
+        return new Retrofit.Builder()
+                .baseUrl(baseUrl)
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .client(okHttpClient)
                 .build();

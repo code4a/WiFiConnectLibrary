@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">WiFiConnectLibrary</string>
+    <string name="app_name">Library Demo</string>
+    <string name="title_weal">福利</string>
+    <string name="title_android">Android</string>
+    <string name="title_ios">iOS</string>
+    <string name="title_resource">拓展资源</string>
+    <string name="title_web">前端</string>
 </resources>
