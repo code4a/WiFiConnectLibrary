@@ -41,11 +41,6 @@ mWifiManager.connectWiFi(result, password.getText().toString().trim(), new WiFiC
 });
 ```
 
-### 致谢
-
-[Kevin Yuan](https://github.com/mkch)的[android-wifi-connecter](https://github.com/mkch/android-wifi-connecter)
-Library中的代码从这个项目中抽取！
-
 ## RetrofitUtil
 > Retrofit + OKHttp + RxJava 简单二次封装
 
@@ -196,3 +191,9 @@ void httpGetResponseBody(){
     ```
 
 #### 还可用作HTTPS请求，可用默认SSLHelper，未校验证书，可以继承该类，通过`setSSLHelper(SSLHelper sslHelper)`实现自定义ssl规则
+
+### 致谢
+
+* [Kevin Yuan](https://github.com/mkch)的[android-wifi-connecter](https://github.com/mkch/android-wifi-connecter)
+WiFiConnect Library中的代码从这个项目中抽取！
+* [代码家](https://github.com/daimajia)的[干货集中营 API 文档](http://gank.io/api)
