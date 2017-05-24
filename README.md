@@ -5,7 +5,7 @@
 
 1.在项目Module的`build.gradle`中添加依赖
 
-`compile 'com.code4a:wificonnectlib:1.0.3'`
+`compile 'com.code4a:wificonnectlib:1.0.4'`
 
 2.然后创建`WiFiConnectManager`对象
 
@@ -48,7 +48,7 @@ mWifiManager.connectWiFi(result, password.getText().toString().trim(), new WiFiC
 
 1.在项目Module的`build.gradle`中添加依赖
 
-`compile 'com.code4a:retrofit-util:0.0.4'`
+`compile 'com.code4a:retrofit-util:0.0.5'`
 
 2.创建RetrofitManager对象
 

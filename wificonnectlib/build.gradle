@@ -29,7 +29,7 @@ publish {
     userOrg = 'code4a'//bintray.com用户名
     groupId = 'com.code4a'//jcenter上的路径
     artifactId = 'wificonnectlib'//项目名称
-    publishVersion = '1.0.3'//版本号
+    publishVersion = '1.0.4'//版本号
     desc = 'WiFi Connect Library'
     website = 'https://github.com/code4a/WiFiConnectLibrary'
 }
