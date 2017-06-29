@@ -1,1 +1,1 @@
-include ':app', ':wificonnectlib', ':retrofitutil'
+include ':app', ':wificonnectlib'/*, ':retrofitutil'*/
